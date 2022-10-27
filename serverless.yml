@@ -3,14 +3,18 @@ service: serverless-api
 provider:
   name: aws
   runtime: nodejs16.x
-  stage: dev
+#  stage: dev
   region: us-east-1
 
 functions:
   app:
-    handler: server.handler
+    handler: "./src/server.handler"
     events:
-      - http: ANY /
+      - http:
+          path: /
+          method: get
 
 plugins:
   - serverless-offline
+  - serverless-plugin-typescript
+

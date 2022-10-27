@@ -1,2 +1,10 @@
+#node modules
 node_modules
+
+#serverless
+.build
+.serverless
+
+#idea
 .idea
+.vscode
